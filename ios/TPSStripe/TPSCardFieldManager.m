@@ -49,6 +49,7 @@ RCT_EXPORT_VIEW_PROPERTY(expirationPlaceholder, NSString);
 RCT_EXPORT_VIEW_PROPERTY(cvcPlaceholder, NSString);
 
 RCT_EXPORT_VIEW_PROPERTY(enabled, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(postalCodeEntryEnabled, BOOL);
 
 RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock);
 

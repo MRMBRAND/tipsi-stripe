@@ -48,6 +48,7 @@ const FieldStylePropType = PropTypes.shape({
  * @property {string} numberPlaceholder
  * @property {string} cvcPlaceholder
  * @property {boolean} disabled
+ * @property {boolean} postalCodeEntryEnabled
  * @property {OnChangeCallback} onChange
  * @property {PaymentComponentTextFieldStyleProp} style
  *
@@ -74,6 +75,7 @@ const NativePaymentCardTextField = requireNativeComponent('TPSCardField', Paymen
     fontStyle: true,
     fontSize: true,
     enabled: true,
+    postalCodeEntryEnabled: true,
     onChange: true,
     params: true, // Currently iOS only
     keyboardAppearance: true, // iOS only
@@ -93,6 +95,7 @@ export default class PaymentCardTextField extends Component {
     numberPlaceholder: PropTypes.string,
     cvcPlaceholder: PropTypes.string,
     disabled: PropTypes.bool,
+    postalCodeEntryEnabled: PropTypes.bool,
     onChange: PropTypes.func,
 
     ...Platform.select({
@@ -174,6 +177,7 @@ export default class PaymentCardTextField extends Component {
     const {
       style,
       disabled,
+      postalCodeEntryEnabled,
       expDate,
       cardNumber,
       securityCode,
@@ -235,6 +239,7 @@ export default class PaymentCardTextField extends Component {
             fontStyle={fontStyle}
             fontSize={fontSize}
             enabled={!disabled}
+            postalCodeEntryEnabled={postalCodeEntryEnabled}
             numberPlaceholder={numberPlaceholder}
             expirationPlaceholder={expirationPlaceholder}
             cvcPlaceholder={cvcPlaceholder}
